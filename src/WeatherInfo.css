@@ -72,3 +72,7 @@
   font-size: large;
   font-weight: lighter;
 }
+.WeatherInfo .li,
+.WeatherInfo .ul{
+  list-style-type: none;
+}

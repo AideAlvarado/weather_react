@@ -34,9 +34,7 @@ export default function WeatherInfo() {
         °F
       </span>
       <div className="mid-col" id="mid-col">
-        <i id="weatherIcon" className="sunny">
-          <img src={weatherData.imgUrl} alt="Clear" />
-        </i>
+        
       </div>
       <div className="mid-col" id="midcol">
         <h2 id="Description">{weatherData.description}</h2>
