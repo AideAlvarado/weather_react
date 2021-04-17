@@ -1,56 +1,36 @@
 import React from "react";
+import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 import "./WeatherInfo.css";
 
-export default function WeatherInfo() {
-  let weatherData = {
-    city: "Monterrey",
-    temperature: 45,
-    date: "Sunday Funday 00:00",
-    description: "sunny",
-    humidity: 30,
-    wind: 50,
-    imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-  };
+export default function WeatherInfo(props) {
+  console.log("WeatherInfo --> props", props, props.data.ready);
   return (
     <div className="WeatherInfo">
-      <div class="destinationcity">
-        <h1 id="destinationcity">{weatherData.city}</h1>
+      <h1 className="city">{props.data.city}</h1>
 
-        <h1 className="weatherdate" id="weatherdate">
-          {weatherData.date}
-        </h1>
-      </div>
-      <h1 className="temp" id="temp">
-        {weatherData.temperature}
-      </h1>
-      <span className="celsius" id="degreesC" aria-label="°Celsius">
-        °C
+      <span>
+        <FormattedDate className="date" id="date" date={props.data.date} />
       </span>
-      <span className="pipe" id="degrees">
-        {" "}
-        |{" "}
-      </span>
-      <span className="fahrenheit" id="degreesF" aria-label="°fahrenheit">
-        °F
-      </span>
-      <div className="mid-col" id="mid-col">
-        
-      </div>
-      <div className="mid-col" id="midcol">
-        <h2 id="Description">{weatherData.description}</h2>
-        <h2 id="infoHum">Humidity {weatherData.humidity}%</h2>
-        <h2 id="infoWin">Wind {weatherData.wind}kmh</h2>
-      </div>
-      <div className="row">
-        <h3> next hours: </h3>
-      </div>
+      <span className="text-capitalize">{props.data.description}</span>
 
-      <div className="row" id="forecast">
-        <div class="col3"> Day1</div>
-        <div class="col3"> Day2</div>
-        <div class="col3"> Day3</div>
-        <div class="col3"> Day4</div>
-        <div class="col3"> Day5</div>
+      <div className="row mt-3">
+        <div className="col-6">
+          <div className="clearfix">
+            <div className="float-left">
+              <WeatherIcon code={props.data.icon} size={52} />
+            </div>
+            <div className="float-left">
+              <WeatherTemperature celsius={props.data.temperature} />
+            </div>
+          </div>
+        </div>
+
+        <div className="col-6">
+          <span>Humidity: {props.data.humidity}%</span>
+          <span>Wind: {props.data.wind} km/h</span>
+        </div>
       </div>
     </div>
   );

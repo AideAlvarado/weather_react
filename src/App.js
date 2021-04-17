@@ -1,7 +1,5 @@
 import "./App.css";
-import Search from "./Search";
-
-import WeatherInfo from "./WeatherInfo";
+import Weather from "./Weather";
 
 export default function App() {
   return (
@@ -10,13 +8,23 @@ export default function App() {
         <div className="cbody">
           <div className="card-body">
             {/* Search Form */}
-            <Search />
-            <div className="midrow">
-              {/* WeatherInfo Form */}
-              <WeatherInfo />
-            </div>
+            <Weather defaultCity="Monterrey" />
           </div>
         </div>
+        <footer className="signature">
+          This project was coded by{" "}
+          <a href="#" target="_blank">
+            Aide Alvarado
+          </a>{" "}
+          and is{" "}
+          <a href="https://" target="_blank">
+            open-sourced on GitHub
+          </a>{" "}
+          and{" "}
+          <a href="https://" target="_blank">
+            hosted on Netlify
+          </a>
+        </footer>
       </div>
     </div>
   );
