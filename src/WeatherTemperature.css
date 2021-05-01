@@ -1,0 +1,17 @@
+.temperature {
+  display: inline;
+  margin-bottom: 1%;
+  text-align: left;
+  width: max-content;
+  color: white;
+  font-weight: lighter;
+  font-size: xxx-large;
+}
+
+.unit {
+  font-size: smaller;
+  color: blanchedalmond;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  top: -1vw;
+}

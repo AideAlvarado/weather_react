@@ -1,17 +1,38 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCoffee,
+  faMapMarker,
+  faCircle,
+  faCircleNotch,
+  faMapMarkedAlt,
+  faMapMarkerAlt,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import "./Weather.css";
-
+import Loading from "./Loading";
 
 export default function Weather(props) {
-  console.log("Weather ", props)
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const marker = <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" inverse />;
+  const searchIcon = <FontAwesomeIcon icon={faSearch} size="lg" inverse />;
+  function ShowPosition(position) {
+    let longitude = position.coords.longitude;
+    let latitude = position.coords.latitude;
+    let key = process.env.REACT_APP_OPENWEATHER_KEY;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
 
+  function getCurrentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(ShowPosition);
+  }
   function handleResponse(response) {
-    console.log('weather--> handle response', response);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -22,46 +43,45 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       icon: response.data.weather[0].icon,
-    })
+    });
   }
 
   function search() {
-    console.log('weather-->search', city, apiKey)
-    const apiKey = `09c4248a521300b214dab61c69efdff2`;
+    const apiKey = process.env.REACT_APP_OPENWEATHER_KEY;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    console.log(apiUrl)
     axios.get(apiUrl).then(handleResponse);
   }
 
   function handleSubmit(event) {
-    console.log('weather-->handleSubmit', event, city)
     event.preventDefault();
     search();
   }
 
   function handleCityChange(event) {
-    console.log('weather-->handleCityChange', event, city)
     setCity(event.target.value);
   }
 
   if (weatherData.ready) {
-    console.log('weater--> weatherData.ready')
     return (
       <div>
-        <form onSubmit={handleSubmit} id="search-form">
+        <form onSubmit={handleSubmit} className="search-form">
           <div className="row">
-            <div className="col-9">
+            <div className="col-7">
               <input
                 type="search"
                 placeholder="Enter a city..."
                 autoFocus="on"
-                className="form-control"
+                className="input"
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-3">
-
-              <input type="submit" value="Search" className="btn btn-primary w-100" />
+            <div className="submitbuttons">
+              <span className="botonSearch" onClick={search}>
+                {searchIcon}
+              </span>
+              <span className="botonSearch" onClick={getCurrentPosition}>
+                {marker}
+              </span>
             </div>
           </div>
         </form>
@@ -71,8 +91,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    console.log('weater--> weatherData.ready is false')
     search();
-    return "Loading..."
+    return "Loading...";
   }
 }

@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 

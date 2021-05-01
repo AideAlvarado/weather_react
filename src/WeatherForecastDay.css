@@ -1,0 +1,7 @@
+.WeatherForecast-day,
+.WeatherForecast-temperature-min,
+.WeatherForecast-temperature-max {
+  color: white;
+  font-weight: lighter;
+  font-size: large;
+}

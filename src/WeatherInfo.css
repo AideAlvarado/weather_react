@@ -32,37 +32,41 @@
   width: max-content;
   color: whitesmoke;
 }
-.WeatherInfo .row {
-  border: none;
-  display: flex;
-  color: whitesmoke;
+
+.description {
+  color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+  font-style: bold;
+  font-size: xxx-large;
+  width: fit-content;
 }
-.WeatherInfo .col3 {
-  border: none;
-  margin: 0 auto;
-  display: inline-block flexbox;
-  min-width: 20%;
-}
-.WeatherInfo .mid-col {
-  display: inline-block;
-  color: whitesmoke;
-}
-.WeatherInfo .h1 .p {
-  color: white;
-  font-weight: lighter;
-  font-size: large;
-}
-.WeatherInfo .h2 {
+
+.h2 {
   color: blanchedalmond;
   font-size: x-large;
   font-family: "Poppins", sans-serif;
 }
-.WeatherInfo .h3 {
+.h3 {
   color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  text-align: left;
   font-weight: lighter;
   width: 40vw;
   -webkit-text-stroke-color: rgb(236, 142, 0);
   -webkit-text-stroke-width: 1px;
+}
+.weatherIcon {
+  position: absolute;
+  display: inline;
+}
+.mid-1 {
+  display: inline-flex;
+}
+.midcol {
+  display: inline-block;
+  color: whitesmoke;
+}
+
+.row {
+  margin: 0;
 }

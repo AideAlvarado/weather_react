@@ -1,0 +1,53 @@
+/* Thanks Viola!!! https://codepen.io/JViola/pen/KzYPWK */
+.bee {
+  position: absolute;
+  background: url(earthday-bee.svg);
+  width: 75px;
+  height: 80px;
+  animation: walk-cycle 0.1s infinite steps(6), move 10s forwards linear;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes walk-cycle {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -450px 0;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(-10vw, 10vh);
+  }
+  10% {
+    transform: translate(0vw, 15vh);
+  }
+  20% {
+    transform: translate(10vw, 20vh);
+  }
+  30% {
+    transform: translate(20vw, 15vh);
+  }
+  40% {
+    transform: translate(30vw, 10vh);
+  }
+  50% {
+    transform: translate(40vw, 5vh);
+  }
+  60% {
+    transform: translate(50vw, 0vh);
+  }
+  70% {
+    transform: translate(60vw, 5vh);
+  }
+  80% {
+    transform: translate(70vw, 10vh);
+  }
+  90% {
+    transform: translate(80vw, 15vh);
+  }
+  100% {
+    transform: translate(80vw, 20vh);
+  }
+}

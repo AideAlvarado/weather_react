@@ -1,11 +1,49 @@
-.Weather .searchbox {
-  background-color: pink;
+.search {
+  background-color: #c70069;
   box-shadow: 0px 15px 18px -6px rgba(199, 0, 105, 0.65);
   border-radius: 50px;
-  border-color: pink;
+  border-color: #c70069;
   border: none;
   color: white;
   width: 4ex;
   height: 4ex;
   font-size: medium;
+}
+
+.search:active {
+  background-color: #ab005a;
+  box-shadow: 0px 12px 18px -4px rgba(199, 0, 105, 0.9);
+  transform: scale(0.95, 0.95);
+  transition: all 0.4s -0.125s;
+}
+
+.search:hover {
+  background-color: #c70069cc;
+  box-shadow: 0px 22px 19px -8px rgba(199, 0, 105, 0.5);
+  transform: scale(1.02, 1.02);
+}
+
+.input {
+  border: 1px groove #f3a469;
+  border-radius: 30px;
+  align-self: left;
+  background-color: white;
+  box-shadow: 0px 22px 19px -8px rgba(199, 0, 105, 0.5);
+  font-size: large;
+  font-style: italic;
+  padding-right: 10vw;
+  width: -webkit-fill-available;
+}
+.botonSearch {
+  background-color: #c70069;
+  box-shadow: 0px 15px 18px -6px rgba(199, 0, 105, 0.65);
+  border-radius: 50%;
+  border-color: #c70069;
+  border: none;
+  color: white;
+  width: 4ex;
+  height: 4ex;
+  font-size: medium;
+  padding: 8px;
+  margin: 8px;
 }
