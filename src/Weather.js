@@ -20,7 +20,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const marker = <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" inverse />;
   const searchIcon = <FontAwesomeIcon icon={faSearch} size="lg" inverse />;
-  console.log("Weather --->", process.env);
+  console.log("Weather ----->", process.env);
   function ShowPosition(position) {
     let longitude = position.coords.longitude;
     let latitude = position.coords.latitude;
