@@ -9,12 +9,13 @@ export default function Loading() {
           <div className="card">
             <div className="card-body">
               <Loader
-                type="Hearts"
-                color="#00BFFF"
+                type="Puff"
+                color="#e66465"
                 height={100}
                 width={100}
                 timeout={0} //3 secs
               />
+              Loading...
             </div>
           </div>
         </div>

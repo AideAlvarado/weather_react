@@ -1,24 +1,32 @@
 import dotenv from "dotenv";
+import React, { useState } from "react";
 dotenv.config();
 import "./App.css";
 import Weather from "./Weather";
-import Cloud from "./Cloud";
-import Sun from "./Sun";
 import Background from "./Background";
 import Bee from "./Bee";
+import Butterflies from "./Butterflies";
+
 export default function App() {
+  const [selected, setSelected] = useState(false);
+  const [daynight, setDayNight] = useState("sunset");
+  function toggleSelected(selected) {
+    selected = setSelected(!selected);
+  }
   return (
     <div className="App">
-      <Background />
+      <Background day={daynight} />
       <div className="maincontainer">
         {" "}
         <Bee style={{ zOrder: "200" }} />
         <div className="cbody">
           <div className="card-body">
             {/* Search Form */}
-            <Weather defaultCity="Monterrey" />
+            <Weather defaultCity="Monterrey" /> <Butterflies />
             {/*Geolocation Form*/}
+            {/*
             <showPosition />
+            */}
           </div>
         </div>
         <footer className="signature">

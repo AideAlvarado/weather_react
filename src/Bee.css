@@ -48,6 +48,6 @@
     transform: translate(80vw, 15vh);
   }
   100% {
-    transform: translate(80vw, 20vh);
+    transform: translate(90vw, 20vh);
   }
 }

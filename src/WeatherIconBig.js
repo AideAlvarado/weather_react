@@ -43,6 +43,5 @@ export default function WeatherIconBig(props) {
     "50d": "cloudy",
     "50n": "cloudy",
   };
-  console.log("Weather Icon", conditions[props.code]);
   return <div className={conditions[props.code]} size={150}></div>;
 }

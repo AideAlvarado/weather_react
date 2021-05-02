@@ -2,15 +2,7 @@ import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCoffee,
-  faMapMarker,
-  faCircle,
-  faCircleNotch,
-  faMapMarkedAlt,
-  faMapMarkerAlt,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import "./Weather.css";
 import Loading from "./Loading";
@@ -18,9 +10,10 @@ import Loading from "./Loading";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [selected, setSelected] = useState(false);
   const marker = <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" inverse />;
   const searchIcon = <FontAwesomeIcon icon={faSearch} size="lg" inverse />;
-  console.log("Weather ----->", process.env);
+
   function ShowPosition(position) {
     let longitude = position.coords.longitude;
     let latitude = position.coords.latitude;
@@ -93,6 +86,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading...";
+    return <Loading />;
   }
 }
