@@ -5,7 +5,7 @@ import "./Butterflies.css";
 export default function Butterflies(props) {
   var butterflies = [];
   setTimeout(function () {
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 5; i++) {
       var b = new Butterfly();
       b.init();
       butterflies.push(b);
