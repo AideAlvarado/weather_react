@@ -32,6 +32,7 @@ export default function App() {
         <footer className="signature">
           This project was coded by{" "}
           <a
+            className="link"
             href="https://www.linkedin.com/in/maribel-alvarado/"
             target="_blank"
           >
@@ -39,6 +40,7 @@ export default function App() {
           </a>{" "}
           It is{" "}
           <a
+            className="link"
             href="https://github.com/AideAlvarado/weather_react"
             target="_blank"
           >
@@ -46,6 +48,7 @@ export default function App() {
           </a>{" "}
           and{" "}
           <a
+            className="link"
             href="https://practical-einstein-3cac52.netlify.app/"
             target="_blank"
           >

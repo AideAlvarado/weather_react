@@ -49,12 +49,22 @@
 .h3 {
   color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: lighter;
+  -webkit-text-stroke-color: rgb(236, 142, 0);
+  -webkit-text-stroke-width: 1px;
+}
+
+.h31 {
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
   text-align: left;
   font-weight: lighter;
   width: 40vw;
   -webkit-text-stroke-color: rgb(236, 142, 0);
   -webkit-text-stroke-width: 1px;
 }
+
 .weatherIcon {
   position: absolute;
   display: inline;

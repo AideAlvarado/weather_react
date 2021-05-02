@@ -33,17 +33,17 @@ export default function WeatherInfo(props) {
             {props.data.description}
             <br></br>
           </span>
-          <span>
+          <span className="h2">
             Humidity: <h2>{props.data.humidity}%</h2>
           </span>
-          <span>
+          <span className="h2">
             Wind: <h2>{props.data.wind} km/h</h2>
           </span>
         </div>
         {/* midcol col-6  */}
       </div>
       {/** row mt-3 */}
-      <div className="h3">
+      <div className="h31">
         <h3>Have a look for the next days</h3>
       </div>
     </div>
