@@ -31,15 +31,24 @@ export default function App() {
         </div>
         <footer className="signature">
           This project was coded by{" "}
-          <a href="#" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/maribel-alvarado/"
+            target="_blank"
+          >
             Aide Alvarado.
           </a>{" "}
           It is{" "}
-          <a href="https://" target="_blank">
+          <a
+            href="https://github.com/AideAlvarado/weather_react"
+            target="_blank"
+          >
             open-sourced on GitHub
           </a>{" "}
           and{" "}
-          <a href="https://" target="_blank">
+          <a
+            href="https://practical-einstein-3cac52.netlify.app/"
+            target="_blank"
+          >
             hosted on Netlify
           </a>
         </footer>
